@@ -45,7 +45,7 @@ module ImageSuckr
     def get_image_file(params = {})
       begin
         open(URI.parse(get_image_url(params)))
-      rescue 
+      rescue OpenURI::HTTPError 
         get_image_file(params) 
       end
     end
